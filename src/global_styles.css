@@ -1,0 +1,7 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/* Style for header */
+.header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px 0;
+}

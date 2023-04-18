@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 style="color: blue;">Product List</h1>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td style="color: green;">{{ product.price | currency }}</td>
+        <td>
+          <div class="d-flex align-items-center">
+            <a
+              [routerLink]="['/products', product.id]"
+              class="btn btn-primary mr-2"
+              >Edit</a
+            >
+            <button class="btn btn-danger" (click)="deleteProduct(product.id)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a
+    routerLink="/products/new"
+    class="btn btn-success"
+    style="background-color: orange;"
+    >Add Product</a
+  >
+</div>
